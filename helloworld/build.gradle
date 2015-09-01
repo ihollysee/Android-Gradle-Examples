@@ -1,5 +1,13 @@
 task hello {
-	doLast {
-		println 'Hello world!'
-	}
+    doLast {
+        println 'Hello world!'
+    }
+}
+
+task fileRead {
+    def file1 = new File('file1.txt')
+    FileReader reader = new FileReader(file1);
+    char[] chars = new char[file1.length()];
+    reader.read(chars)
+    println new String(chars)
 }
